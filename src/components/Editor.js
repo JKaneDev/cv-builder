@@ -80,6 +80,17 @@ class Editor extends Component {
 		this.setState({ skills: newSkill });
 	};
 
+	handleSkillsAdd = () => {
+		const newSkills = [...this.state.skills];
+		newSkills.push({ skillName: '' });
+		this.setState({ skills: newSkills });
+	};
+
+	handleSkillsDelete = (id) => {
+		const updatedSkills = this.state.skills.filter((skill) => skill.id !== id);
+		this.setState({ skills: updatedSkills });
+	};
+
 	render() {
 		return (
 			<div>
