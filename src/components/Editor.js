@@ -19,77 +19,40 @@ class Editor extends Component {
 		};
 	}
 
-	handleFirstNameChange = (event) => {
-		const newFirstName = event.target.value;
+	handlePersonalChange = (field, event) => {
+		const newValue = event.target.value;
 		this.setState((prevState) => ({
 			personal: {
 				...prevState.personal,
-				firstName: newFirstName,
+				[field]: newValue,
 			},
 		}));
 	};
 
-	handleSurnameChange = (event) => {
-		const newSurname = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				surname: newSurname,
-			},
-		}));
-	};
-
-	handleAddressChange = (event) => {
-		const newAddress = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				address: newAddress,
-			},
-		}));
-	};
-
-	handleWebsiteChange = (event) => {
-		const newWebsite = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				website: newWebsite,
-			},
-		}));
-	};
-
-	handleEmailChange = (event) => {
-		const newEmail = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				email: newEmail,
-			},
-		}));
-	};
-
-	handleNumberChange = (event) => {
-		const newNumber = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				number: newNumber,
-			},
-		}));
-	};
-
-	handleBioChange = (event) => {
-		const newBio = event.target.value;
-		this.setState((prevState) => ({
-			personal: {
-				...prevState.personal,
-				bio: newBio,
-			},
-		}));
+	handleEducationChange = (event) => {
+		const newEdu = [...this.state.education];
+		newEdu[id] = {
+			...newEdu[id],
+			[field]: event.target.value,
+		};
+		this.setState({ education: newEdu });
 	};
 
 	render() {
-		return;
+		return (
+			<div>
+				<Header />
+				<Personal
+					personal={this.state.personal}
+					onPersonalChange={this.state.handlePersonalChange}
+				/>
+				<Education
+					education={this.state.education}
+					onEducationChange={this.state.handleEducationChange}
+				/>
+				<WorkExperience />
+				<Skills />
+			</div>
+		);
 	}
 }
