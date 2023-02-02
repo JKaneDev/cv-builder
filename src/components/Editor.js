@@ -29,13 +29,31 @@ class Editor extends Component {
 		}));
 	};
 
-	handleEducationChange = (event) => {
+	handleEducationChange = (id, field, event) => {
 		const newEdu = [...this.state.education];
 		newEdu[id] = {
 			...newEdu[id],
 			[field]: event.target.value,
 		};
 		this.setState({ education: newEdu });
+	};
+
+	handleExperienceChange = (id, field, event) => {
+		const newExp = [...this.state.education];
+		newExp[id] = {
+			...newExp[id],
+			[field]: event.target.value,
+		};
+		this.setState({ experience: newExp });
+	};
+
+	handleSkillsChange = (id, field, event) => {
+		const newSkill = [...this.state.skills];
+		newSkill[id] = {
+			...newSkill[id],
+			[field]: event.target.value,
+		};
+		this.setState({ skills: newSkill });
 	};
 
 	render() {
