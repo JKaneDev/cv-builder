@@ -60,6 +60,17 @@ class Editor extends Component {
 		this.setState({ experience: newExp });
 	};
 
+	handleExperienceAdd = () => {
+		const newExp = [...this.state.education];
+		newExp.push({ company: '', role: '', desc: '', start: '', end: '' });
+		this.setState({ experience: newExp });
+	};
+
+	handleExperienceDelete = (id) => {
+		const updatedExp = this.state.experience.filter((job) => job.id !== id);
+		this.setState({ experience: updatedExp });
+	};
+
 	handleSkillsChange = (id, field, event) => {
 		const newSkill = [...this.state.skills];
 		newSkill[id] = {
@@ -80,8 +91,15 @@ class Editor extends Component {
 				<Education
 					education={this.state.education}
 					onEducationChange={this.state.handleEducationChange}
+					onEducationAdd={this.state.handleEducationAdd}
+					onEducationDelete={this.state.handleEducationDelete}
 				/>
-				<WorkExperience />
+				<WorkExperience
+					experience={this.state.experience}
+					onExperienceChange={this.state.handleExperienceChange}
+					onExperienceAdd={this.state.handleExperienceAdd}
+					onExperienceDelete={this.state.handleExperienceDelete}
+				/>
 				<Skills />
 			</div>
 		);
