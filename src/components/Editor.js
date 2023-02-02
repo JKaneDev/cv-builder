@@ -38,6 +38,19 @@ class Editor extends Component {
 		this.setState({ education: newEdu });
 	};
 
+	handleEducationAdd = () => {
+		const newEdu = [...this.state.education];
+		newEdu.push({ institution: '', degree: '', dates: '' });
+		this.setState({ education: newEdu });
+	};
+
+	handleEducationDelete = (id) => {
+		const updatedEdu = this.state.education.filter(
+			(institution) => institution.id !== id
+		);
+		this.setState({ education: updatedEdu });
+	};
+
 	handleExperienceChange = (id, field, event) => {
 		const newExp = [...this.state.education];
 		newExp[id] = {
