@@ -47,12 +47,6 @@ class Editor extends Component {
 		}));
 	};
 
-	handleEducationAdd = () => {
-		const newEdu = [...this.state.education];
-		newEdu.push({ id: uuidv4(), institution: '', degree: '', dates: '' });
-		this.setState({ education: newEdu });
-	};
-
 	handleEducationDelete = (id) => {
 		const updatedEdu = this.state.education.filter(
 			(institution) => institution.id !== id
@@ -76,16 +70,18 @@ class Editor extends Component {
 	};
 
 	handleExperienceAdd = () => {
-		const newExp = [...this.state.education];
-		newExp.push({
+		const newExp = {
 			id: uuidv4(),
-			company: '',
-			role: '',
-			desc: '',
-			start: '',
-			end: '',
-		});
-		this.setState({ experience: newExp });
+			company: this.state.company,
+			role: this.state.role,
+			desc: this.state.desc,
+			start: this.state.start,
+			end: this.state.end,
+		};
+
+		this.setState((prevState) => ({
+			workExperience: [...prevState.workExperience, newExp],
+		}));
 	};
 
 	handleExperienceDelete = (id) => {
