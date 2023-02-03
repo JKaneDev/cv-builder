@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 class Editor extends Component {
 	constructor(props) {
@@ -13,9 +14,11 @@ class Editor extends Component {
 				number: '',
 				bio: '',
 			},
-			education: [],
-			workExperience: [],
-			skills: [],
+			education: [{ id: uuidv4(), institution: '', degree: '', dates: '' }],
+			workExperience: [
+				{ id: uuidv4(), company: '', role: '', desc: '', start: '', end: '' },
+			],
+			skills: [{}],
 		};
 	}
 
@@ -52,12 +55,18 @@ class Editor extends Component {
 	};
 
 	handleExperienceChange = (id, field, event) => {
-		const newExp = [...this.state.education];
-		newExp[id] = {
-			...newExp[id],
-			[field]: event.target.value,
-		};
-		this.setState({ experience: newExp });
+		const newExp = event.target.value;
+		this.setState((prevState) => ({
+			workExperience: prevState.workExperience.map((job) => {
+				if (job.id === id) {
+					return {
+						...job,
+						[field]: newExp,
+					};
+				}
+				return job;
+			}),
+		}));
 	};
 
 	handleExperienceAdd = () => {
@@ -111,7 +120,12 @@ class Editor extends Component {
 					onExperienceAdd={this.state.handleExperienceAdd}
 					onExperienceDelete={this.state.handleExperienceDelete}
 				/>
-				<Skills />
+				<Skills
+					skills={this.state.skills}
+					onSkillsChange={this.state.handleSkillsChange}
+					onSkillsAdd={this.state.handleSkillsAdd}
+					onSkillsDelete={this.state.handleSkillsDelete}
+				/>
 			</div>
 		);
 	}
