@@ -49,7 +49,7 @@ class Editor extends Component {
 
 	handleEducationAdd = () => {
 		const newEdu = [...this.state.education];
-		newEdu.push({ institution: '', degree: '', dates: '' });
+		newEdu.push({ id: uuidv4(), institution: '', degree: '', dates: '' });
 		this.setState({ education: newEdu });
 	};
 
@@ -77,7 +77,14 @@ class Editor extends Component {
 
 	handleExperienceAdd = () => {
 		const newExp = [...this.state.education];
-		newExp.push({ company: '', role: '', desc: '', start: '', end: '' });
+		newExp.push({
+			id: uuidv4(),
+			company: '',
+			role: '',
+			desc: '',
+			start: '',
+			end: '',
+		});
 		this.setState({ experience: newExp });
 	};
 
@@ -103,7 +110,7 @@ class Editor extends Component {
 
 	handleSkillsAdd = () => {
 		const newSkills = [...this.state.skills];
-		newSkills.push({ skillName: '' });
+		newSkills.push({ id: uuidv4(), skill: '' });
 		this.setState({ skills: newSkills });
 	};
 
