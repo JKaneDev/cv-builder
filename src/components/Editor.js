@@ -18,7 +18,7 @@ class Editor extends Component {
 			workExperience: [
 				{ id: uuidv4(), company: '', role: '', desc: '', start: '', end: '' },
 			],
-			skills: [{}],
+			skills: [{ id: uuidv4(), skill: '' }],
 		};
 	}
 
@@ -87,12 +87,18 @@ class Editor extends Component {
 	};
 
 	handleSkillsChange = (id, field, event) => {
-		const newSkill = [...this.state.skills];
-		newSkill[id] = {
-			...newSkill[id],
-			[field]: event.target.value,
-		};
-		this.setState({ skills: newSkill });
+		const newSkill = event.target.value;
+		this.setState((prevState) => ({
+			skills: prevState.skills.map((skill) => {
+				if (skill.id === id) {
+					return {
+						...skill,
+						[field]: newSkill,
+					};
+				}
+				return skill;
+			}),
+		}));
 	};
 
 	handleSkillsAdd = () => {
