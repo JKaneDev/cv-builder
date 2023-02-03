@@ -33,12 +33,18 @@ class Editor extends Component {
 	};
 
 	handleEducationChange = (id, field, event) => {
-		const newEdu = [...this.state.education];
-		newEdu[id] = {
-			...newEdu[id],
-			[field]: event.target.value,
-		};
-		this.setState({ education: newEdu });
+		const newEdu = event.target.value;
+		this.setState((prevState) => ({
+			education: prevState.education.map((school) => {
+				if (school.id === id) {
+					return {
+						...school,
+						[field]: newEdu,
+					};
+				}
+				return school;
+			}),
+		}));
 	};
 
 	handleEducationAdd = () => {
