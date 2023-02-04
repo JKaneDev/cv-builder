@@ -27,6 +27,7 @@ class Skills extends Component {
 					<h2>Skills & Technologies</h2>
 				</div>
 				<div>{this.skillItems}</div>
+				<Button text='&plus; New' onClick={handleSkillsAdd} />
 			</section>
 		);
 	}
