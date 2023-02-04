@@ -15,7 +15,11 @@ class ExperienceItem extends Component {
 			<section>
 				<div>
 					<img src='' alt='work-img' id='work-img'></img>
-					<h3>Work Experience</h3>
+					<h3>
+						Work Experience #
+						{this.state.workExperience.findIndex((exp) => exp.id === id) + 1}
+					</h3>
+
 					<Button
 						text='Delete'
 						onClick={() => handleExperienceDelete(experience.id)}
