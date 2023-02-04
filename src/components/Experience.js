@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import ExperienceItem from './ExperienceItem';
+import ExperienceItem from './ExperienceItem.js';
 
 class Experience extends Component {
 	constructor(props) {
@@ -8,26 +8,31 @@ class Experience extends Component {
 		this.state = {
 			workExperience: this.props.workExperience,
 		};
-		handleExperienceChange = this.props.onExperienceChange;
-		handleExperienceAdd = this.props.onExperienceAdd;
-		handleExperienceDelete = this.props.onExperienceDelete;
 	}
 
 	experienceItems = this.state.workExperience.map((experienceItem) => (
 		<ExperienceItem
 			id={experienceItem.id}
 			onExperienceChange={this.handleExperienceChange}
-			onExperienceAdd={this.handleExperienceAdd}
 			onExperienceDelete={this.handleExperienceDelete}
 		/>
 	));
 
 	render() {
+		const {
+			handleExperienceAdd,
+			handleExperienceDelete,
+			handleExperienceChange,
+		} = this.props;
 		return (
-			<div>
+			<section>
+				<div>
+					<img src='' alt='work-img' id='work-img'></img>
+					<h2>Practical Experience</h2>
+				</div>
 				{this.experienceItems}
-				<Button text='&#43; New' onClick={this.handleExperienceAdd} />
-			</div>
+				<Button text='&plus; New' onClick={handleExperienceAdd} />
+			</section>
 		);
 	}
 }
