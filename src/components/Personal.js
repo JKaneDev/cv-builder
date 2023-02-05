@@ -7,49 +7,51 @@ class Personal extends Component {
 		this.state = {
 			personal: this.props.personal,
 		};
-		this.handlePersonalChange = this.props.onPersonalChange.bind(this);
 	}
 
 	render() {
+		const { onPersonalChange, personal } = this.props;
 		return (
 			<div>
 				<h2>Personal Information</h2>
 				<Input
 					type='text'
-					value={this.props.personal.firstName}
-					onChange={(event) => this.props.onPersonalChange('firstName', event)}
+					value={personal.firstName}
+					onChange={(event) => onPersonalChange('firstName', event)}
 				/>
 				<Input
 					type='text'
-					value={this.props.personal.surname}
-					onChange={(event) => this.props.onPersonalChange('surname', event)}
+					value={personal.surname}
+					onChange={(event) => onPersonalChange('surname', event)}
 				/>
 				<Input
 					type='text'
-					value={this.props.personal.address}
-					onChange={(event) => this.props.onPersonalChange('address', event)}
+					value={personal.address}
+					onChange={(event) => onPersonalChange('address', event)}
 				/>
 				<Input
 					type='text'
-					value={this.props.personal.website}
-					onChange={(event) => this.props.onPersonalChange('website', event)}
+					value={personal.website}
+					onChange={(event) => onPersonalChange('website', event)}
 				/>
 				<Input
 					type='text'
-					value={this.props.personal.email}
-					onChange={(event) => this.props.onPersonalChange('email', event)}
+					value={personal.email}
+					onChange={(event) => onPersonalChange('email', event)}
 				/>
 				<Input
 					type='number'
-					value={this.props.personal.number}
-					onChange={(event) => this.props.onPersonalChange('number', event)}
+					value={personal.number}
+					onChange={(event) => onPersonalChange('number', event)}
 				/>
 				<Input
 					type='text'
-					value={this.props.personal.bio}
-					onChange={(event) => this.props.onPersonalChange('bio', event)}
+					value={personal.bio}
+					onChange={(event) => onPersonalChange('bio', event)}
 				/>
 			</div>
 		);
 	}
 }
+
+export default Personal;
