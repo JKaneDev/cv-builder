@@ -9,7 +9,7 @@ class ExperienceItem extends Component {
 	}
 
 	render() {
-		const { handleExperienceDelete, handleExperienceChange, id } = this.props;
+		const { onExperienceDelete, onExperienceChange, id } = this.props;
 		const experience = this.state.workExperience.find((exp) => exp.id === id);
 		return (
 			<section>
@@ -22,7 +22,7 @@ class ExperienceItem extends Component {
 
 					<Button
 						text='Delete'
-						onClick={() => handleExperienceDelete(experience.id)}
+						onClick={() => onExperienceDelete(experience.id)}
 					/>
 				</div>
 				<div>
@@ -31,7 +31,7 @@ class ExperienceItem extends Component {
 						value={experience.company}
 						placeholder='E.g. Microsoft'
 						onChange={(event) =>
-							handleExperienceChange(experience.id, company, event.target.value)
+							onExperienceChange(experience.id, company, event.target.value)
 						}
 					/>
 					<Input
@@ -39,7 +39,7 @@ class ExperienceItem extends Component {
 						value={experience.role}
 						placeholder='E.g. Senior Software Engineer'
 						onChange={(event) =>
-							handleExperienceChange(experience.id, role, event.target.value)
+							onExperienceChange(experience.id, role, event.target.value)
 						}
 					/>
 					<Input
@@ -47,7 +47,7 @@ class ExperienceItem extends Component {
 						value={experience.desc}
 						placeholder='Describe your main occupation, daily tasks, responsibilities etc.'
 						onChange={(event) =>
-							handleExperienceChange(experience.id, desc, event.target.value)
+							onExperienceChange(experience.id, desc, event.target.value)
 						}
 					/>
 					<Input
@@ -55,7 +55,7 @@ class ExperienceItem extends Component {
 						value={experience.start}
 						placeholder='E.g. June 2017'
 						onChange={(event) =>
-							handleExperienceChange(experience.id, start, event.target.value)
+							onExperienceChange(experience.id, start, event.target.value)
 						}
 					/>
 					<Input
@@ -63,7 +63,7 @@ class ExperienceItem extends Component {
 						value={experience.end}
 						placeholder='E.g. September 2019'
 						onChange={(event) =>
-							handleExperienceChange(experience.id, end, event.target.value)
+							onExperienceChange(experience.id, end, event.target.value)
 						}
 					/>
 				</div>
@@ -71,3 +71,5 @@ class ExperienceItem extends Component {
 		);
 	}
 }
+
+export default ExperienceItem;
