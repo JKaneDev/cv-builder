@@ -1,5 +1,4 @@
 import react, { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 class Skills extends Component {
 	constructor(props) {
@@ -12,8 +11,8 @@ class Skills extends Component {
 	skillItems = this.state.skills.map((skill) => (
 		<SkillItem
 			id={skill.id}
-			onSkillChange={this.handleSkillsChange}
-			onSkillDelete={this.handleSkillsDelete}
+			onSkillChange={this.props.onSkillsChange}
+			onSkillDelete={this.props.onSkillDelete}
 		/>
 	));
 
@@ -32,3 +31,5 @@ class Skills extends Component {
 		);
 	}
 }
+
+export default Skills;
