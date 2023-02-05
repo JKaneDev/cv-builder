@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import ExperienceItem from './ExperienceItem.js';
 
 class Experience extends Component {
@@ -13,17 +12,13 @@ class Experience extends Component {
 	experienceItems = this.state.workExperience.map((experienceItem) => (
 		<ExperienceItem
 			id={experienceItem.id}
-			onExperienceChange={this.handleExperienceChange}
-			onExperienceDelete={this.handleExperienceDelete}
+			onExperienceChange={this.props.onExperienceChange}
+			onExperienceDelete={this.props.onExperienceDelete}
 		/>
 	));
 
 	render() {
-		const {
-			handleExperienceAdd,
-			handleExperienceDelete,
-			handleExperienceChange,
-		} = this.props;
+		const { onExperienceAdd } = this.props;
 		return (
 			<section>
 				<div>
@@ -31,8 +26,10 @@ class Experience extends Component {
 					<h2>Practical Experience</h2>
 				</div>
 				{this.experienceItems}
-				<Button text='&plus; New' onClick={handleExperienceAdd} />
+				<Button text='&plus; New' onClick={onExperienceAdd} />
 			</section>
 		);
 	}
 }
+
+export default Experience;
