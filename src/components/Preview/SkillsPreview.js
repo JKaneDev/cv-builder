@@ -8,7 +8,7 @@ class Skills extends Component {
 	}
 
 	skillItems = this.props.skills.map((skill) => (
-		<SkillItem id={skill.id} skill={skill.skill} />
+		<SkillItem id={skill.id} skill={skill.skill} key={skill.id} />
 	));
 
 	render() {

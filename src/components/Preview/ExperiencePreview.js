@@ -10,6 +10,7 @@ class ExperiencePreview extends Component {
 	experienceItems = this.props.experience.map((experience) => (
 		<ExperienceItem
 			id={experience.id}
+			key={experience.id}
 			company={experience.company}
 			role={experience.role}
 			desc={experience.desc}

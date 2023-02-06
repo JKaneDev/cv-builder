@@ -12,7 +12,7 @@ class SkillItem extends Component {
 		const { onSkillChange, onSkillDelete, id, skill } = this.props;
 
 		return (
-			<div>
+			<li>
 				<Input
 					type='text'
 					value={skill}
@@ -20,7 +20,7 @@ class SkillItem extends Component {
 					onChange={(event) => onSkillChange(id, skill, event.target.value)}
 				/>
 				<Button text='Delete' onClick={() => onSkillDelete(id)} />
-			</div>
+			</li>
 		);
 	}
 }

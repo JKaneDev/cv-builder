@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from './UIElements/Button';
 import save from '../assets/save.svg';
 import autofill from '../assets/autofill.svg';
-import GithubIcon from '../assets/Github';
+import { FaGithub } from 'react-icons/fa';
 
 class Header extends Component {
 	constructor(props) {
@@ -15,10 +15,6 @@ class Header extends Component {
 		};
 	}
 
-	goToGithub = () => {
-		window.location.href = 'https://github.com/JKaneDev/cv-builder';
-	};
-
 	render() {
 		const { onSave, onAutofill } = this.props;
 		return (
@@ -30,7 +26,9 @@ class Header extends Component {
 				</div>
 				<div>
 					<h3>Source Code:</h3>
-					<Button img={GithubIcon} text='JKaneDev' onClick={this.goToGithub} />
+					<a href='https://github.com/JKaneDev/cv-builder' target='_blank'>
+						<FaGithub style={{ color: 'black', height: 32, width: 32 }} />
+					</a>
 				</div>
 			</header>
 		);

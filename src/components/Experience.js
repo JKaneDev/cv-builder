@@ -12,6 +12,7 @@ class Experience extends Component {
 		<ExperienceItem
 			workExperience={this.props.workExperience}
 			id={item.id}
+			key={item.id}
 			company={item.company}
 			role={item.role}
 			desc={item.desc}
