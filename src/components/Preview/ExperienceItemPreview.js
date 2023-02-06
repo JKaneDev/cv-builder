@@ -3,13 +3,11 @@ import React, { Component } from 'react';
 class ExperienceItem extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			experience: this.props.experience,
-		};
+		this.state = {};
 	}
 
 	render() {
-		const { id, company, role, desc, start, end } = this.state;
+		const { company, role, desc, start, end } = this.props;
 		return (
 			<div>
 				<h4>{role}</h4>

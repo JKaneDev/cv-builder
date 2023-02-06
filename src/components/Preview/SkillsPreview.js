@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import SkillItem from './SkillItemPreview';
 
 class Skills extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			skills: this.props.skills,
-		};
+		this.state = {};
 	}
 
-	skillItems = this.state.skills.map((skill) => <SkillItem id={skill.id} />);
+	skillItems = this.props.skills.map((skill) => (
+		<SkillItem id={skill.id} skill={skill.skill} />
+	));
 
 	render() {
 		return (
@@ -19,3 +20,5 @@ class Skills extends Component {
 		);
 	}
 }
+
+export default Skills;

@@ -5,14 +5,11 @@ import Button from './UIElements/Button';
 class SkillItem extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			skills: this.props.skills,
-		};
+		this.state = {};
 	}
 
 	render() {
-		const { handleSkillsChange, handleSkillsDelete } = this.props;
-		const { id, skill } = this.state;
+		const { onSkillChange, onSkillDelete, id, skill } = this.props;
 
 		return (
 			<div>
@@ -20,11 +17,9 @@ class SkillItem extends Component {
 					type='text'
 					value={skill}
 					placeholder='E.g. React'
-					onChange={(event) =>
-						handleSkillsChange(id, skill, event.target.value)
-					}
+					onChange={(event) => onSkillChange(id, skill, event.target.value)}
 				/>
-				<Button text='Delete' onClick={() => handleSkillsDelete(id)} />
+				<Button text='Delete' onClick={() => onSkillDelete(id)} />
 			</div>
 		);
 	}

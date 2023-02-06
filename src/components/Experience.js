@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import ExperienceItem from './ExperienceItem.js';
+import Button from './UIElements/Button';
 
 class Experience extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			workExperience: this.props.workExperience,
-		};
+		this.state = {};
 	}
 
-	experienceItems = this.state.workExperience.map((experienceItem) => (
+	experienceItems = this.props.workExperience.map((item) => (
 		<ExperienceItem
-			id={experienceItem.id}
+			workExperience={this.props.workExperience}
+			id={item.id}
+			company={item.company}
+			role={item.role}
+			desc={item.desc}
+			start={item.start}
+			end={item.end}
 			onExperienceChange={this.props.onExperienceChange}
 			onExperienceDelete={this.props.onExperienceDelete}
 		/>

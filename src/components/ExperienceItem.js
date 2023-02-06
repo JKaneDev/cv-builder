@@ -5,14 +5,20 @@ import Input from './UIElements/InputField';
 class ExperienceItem extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			workExperience: this.props.workExperience,
-		};
+		this.state = {};
 	}
 
 	render() {
-		const { onExperienceDelete, onExperienceChange } = this.props;
-		const { id, company, role, desc, start, end } = this.state;
+		const {
+			onExperienceDelete,
+			onExperienceChange,
+			id,
+			company,
+			role,
+			desc,
+			start,
+			end,
+		} = this.props;
 
 		return (
 			<section>
@@ -20,7 +26,7 @@ class ExperienceItem extends Component {
 					<img src='' alt='work-img' id='work-img'></img>
 					<h3>
 						Work Experience #
-						{this.state.workExperience.findIndex((exp) => exp.id === id) + 1}
+						{this.props.workExperience.findIndex((exp) => exp.id === id) + 1}
 					</h3>
 
 					<Button text='Delete' onClick={() => onExperienceDelete(id)} />

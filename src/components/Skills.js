@@ -5,17 +5,15 @@ import Button from './UIElements/Button';
 class Skills extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			skills: this.props.skills,
-		};
+		this.state = {};
 	}
 
-	skillItems = this.state.skills.map((skill) => (
+	skillItems = this.props.skills.map((skill) => (
 		<SkillItem
 			id={skill.id}
 			skill={skill.skill}
 			onSkillChange={this.props.onSkillsChange}
-			onSkillDelete={this.props.onSkillDelete}
+			onSkillDelete={this.props.onSkillsDelete}
 		/>
 	));
 

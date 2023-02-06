@@ -14,6 +14,7 @@ class Contact extends Component {
 	render() {
 		return (
 			<aside>
+				<p>CONTACT</p>
 				<div>
 					<img src='' alt='website-img'></img>
 					<p>{this.website}</p>

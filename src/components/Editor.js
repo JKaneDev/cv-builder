@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+// import ReactPDF from 'react-pdf';
+import { autofill } from './Utils/autofill';
+import Preview from './Preview/Preview';
+import Header from './Header';
+import Personal from './Personal';
+import Education from './Education';
+import Experience from './Experience';
+import Skills from './Skills';
 
 class Editor extends Component {
 	constructor(props) {
@@ -14,13 +22,22 @@ class Editor extends Component {
 				number: '',
 				bio: '',
 			},
-			education: [{ id: uuidv4(), institution: '', degree: '', dates: '' }],
+			education: [
+				{ id: uuidv4(), institution: '', degree: '', dates: '' },
+				{ id: uuidv4(), institution: '', degree: '', dates: '' },
+			],
 			workExperience: [
 				{ id: uuidv4(), company: '', role: '', desc: '', start: '', end: '' },
 			],
 			skills: [{ id: uuidv4(), skill: '' }],
 		};
 	}
+
+	generatePDF = () => {};
+
+	handleAutofill = () => {
+		this.setState(autofill(this.state));
+	};
 
 	handlePersonalChange = (field, event) => {
 		const newValue = event.target.value;
@@ -72,11 +89,11 @@ class Editor extends Component {
 	handleExperienceAdd = () => {
 		const newExp = {
 			id: uuidv4(),
-			company: this.state.company,
-			role: this.state.role,
-			desc: this.state.desc,
-			start: this.state.start,
-			end: this.state.end,
+			company: '',
+			role: '',
+			desc: '',
+			start: '',
+			end: '',
 		};
 
 		this.setState((prevState) => ({
@@ -118,30 +135,38 @@ class Editor extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
+				<Header onAutofill={this.handleAutofill} onSave={this.generatePDF} />
 				<Personal
 					personal={this.state.personal}
-					onPersonalChange={this.state.handlePersonalChange}
+					onPersonalChange={this.handlePersonalChange}
 				/>
 				<Education
 					education={this.state.education}
-					onEducationChange={this.state.handleEducationChange}
-					onEducationAdd={this.state.handleEducationAdd}
-					onEducationDelete={this.state.handleEducationDelete}
+					onEducationChange={this.handleEducationChange}
+					onEducationAdd={this.handleEducationAdd}
+					onEducationDelete={this.handleEducationDelete}
 				/>
-				<WorkExperience
-					experience={this.state.experience}
-					onExperienceChange={this.state.handleExperienceChange}
-					onExperienceAdd={this.state.handleExperienceAdd}
-					onExperienceDelete={this.state.handleExperienceDelete}
+				<Experience
+					workExperience={this.state.workExperience}
+					onExperienceChange={this.handleExperienceChange}
+					onExperienceAdd={this.handleExperienceAdd}
+					onExperienceDelete={this.handleExperienceDelete}
 				/>
 				<Skills
 					skills={this.state.skills}
-					onSkillsChange={this.state.handleSkillsChange}
-					onSkillsAdd={this.state.handleSkillsAdd}
-					onSkillsDelete={this.state.handleSkillsDelete}
+					onSkillsChange={this.handleSkillsChange}
+					onSkillsAdd={this.handleSkillsAdd}
+					onSkillsDelete={this.handleSkillsDelete}
+				/>
+				<Preview
+					personal={this.state.personal}
+					education={this.state.education}
+					experience={this.state.workExperience}
+					skills={this.state.skills}
 				/>
 			</div>
 		);
 	}
 }
+
+export default Editor;

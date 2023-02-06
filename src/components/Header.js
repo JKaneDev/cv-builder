@@ -1,6 +1,8 @@
-import React from 'react';
-import save from '../../assets/save.svg';
-import autofill from '../../assets/autofill.svg';
+import React, { Component } from 'react';
+import Button from './UIElements/Button';
+import save from '../assets/save.svg';
+import autofill from '../assets/autofill.svg';
+import GithubIcon from '../assets/Github';
 
 class Header extends Component {
 	constructor(props) {
@@ -18,17 +20,17 @@ class Header extends Component {
 	};
 
 	render() {
-		const { generatePDF } = this.props;
+		const { onSave, onAutofill } = this.props;
 		return (
 			<header>
 				<div>
 					<h1>CV Builder</h1>
-					<Button img={save} text='Save' onClick={generatePDF} />
-					<Button img={autofill} text='Autofill' onClick={autofill} />
+					<Button img={save} text='Save' onClick={onSave} />
+					<Button img={autofill} text='Autofill' onClick={onAutofill} />
 				</div>
 				<div>
 					<h3>Source Code:</h3>
-					<Button img={github} text='JKaneDev' onClick={goToGithub} />
+					<Button img={GithubIcon} text='JKaneDev' onClick={this.goToGithub} />
 				</div>
 			</header>
 		);

@@ -4,12 +4,10 @@ import ExperienceItem from './ExperienceItemPreview';
 class ExperiencePreview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			experience: this.props.experience,
-		};
+		this.state = {};
 	}
 
-	experienceItems = this.state.experience.map((experience) => (
+	experienceItems = this.props.experience.map((experience) => (
 		<ExperienceItem
 			id={experience.id}
 			company={experience.company}
@@ -21,7 +19,6 @@ class ExperiencePreview extends Component {
 	));
 
 	render() {
-		const { experience } = this.state;
 		return (
 			<>
 				<h3>WORK EXPERIENCE</h3>
