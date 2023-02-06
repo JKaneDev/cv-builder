@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Input from './UIElements/InputField';
+import Button from './UIElements/Button';
 
 class SkillItem extends Component {
 	constructor(props) {
@@ -10,20 +12,19 @@ class SkillItem extends Component {
 
 	render() {
 		const { handleSkillsChange, handleSkillsDelete } = this.props;
-		const { skills } = this.state;
-		const skill = skills.find((skill) => skill.id === id);
+		const { id, skill } = this.state;
 
 		return (
 			<div>
 				<Input
 					type='text'
-					value={skill.skill}
+					value={skill}
 					placeholder='E.g. React'
 					onChange={(event) =>
-						handleSkillsChange(skill.id, skill, event.target.value)
+						handleSkillsChange(id, skill, event.target.value)
 					}
 				/>
-				<Button text='Delete' onClick={() => handleSkillsDelete(skill.id)} />
+				<Button text='Delete' onClick={() => handleSkillsDelete(id)} />
 			</div>
 		);
 	}

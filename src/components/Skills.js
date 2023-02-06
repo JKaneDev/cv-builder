@@ -1,4 +1,6 @@
 import react, { Component } from 'react';
+import SkillItem from './SkillItem';
+import Button from './UIElements/Button';
 
 class Skills extends Component {
 	constructor(props) {
@@ -11,6 +13,7 @@ class Skills extends Component {
 	skillItems = this.state.skills.map((skill) => (
 		<SkillItem
 			id={skill.id}
+			skill={skill.skill}
 			onSkillChange={this.props.onSkillsChange}
 			onSkillDelete={this.props.onSkillDelete}
 		/>
