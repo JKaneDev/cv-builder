@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import Input from './UIElements/InputField';
+import University from '../assets/university.svg';
+import School from '../assets/school.svg';
 
 class Education extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			education: this.props.education,
-		};
+		this.state = {};
 	}
 
 	render() {
-		const { onEducationChange } = this.props;
-		const { education } = this.state;
+		const { onEducationChange, education } = this.props;
 		const [university, school] = education;
 		return (
 			<div>
 				<h2>Educational Information</h2>
-				<img src='' alt='university svg' id='uni-img' />
-				<h3>University</h3>
+				<div>
+					<img src={University} alt='university svg' id='uni-img' />
+					<h3>University</h3>
+				</div>
 				<Input
 					type='text'
 					value={university.institution}
@@ -40,8 +41,10 @@ class Education extends Component {
 					placeholder='E.g. 2015 - 2019'
 					onChange={(event) => onEducationChange(university.id, 'dates', event)}
 				/>
-				<img src='' alt='school svg' id='school-img' />
-				<h3>School</h3>
+				<div>
+					<img src={School} alt='school svg' id='school-img' />
+					<h3>School</h3>
+				</div>
 				<Input
 					type='text'
 					value={school.institution}

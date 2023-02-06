@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SkillItem from './SkillItem';
 import Button from './UIElements/Button';
+import SkillIcon from '../assets/skills.svg';
+import Add from '../assets/add.svg';
 
 class Skills extends Component {
 	constructor(props) {
@@ -24,11 +26,11 @@ class Skills extends Component {
 		return (
 			<section>
 				<div>
-					<img src='' alt='skills-img' id='skills-img'></img>
+					<img src={SkillIcon} alt='skills-img' id='skills-img'></img>
 					<h2>Skills & Technologies</h2>
 				</div>
 				<ul>{this.skillItems}</ul>
-				<Button text='&plus; New' onClick={handleSkillsAdd} />
+				<Button img={Add} onClick={handleSkillsAdd} />
 			</section>
 		);
 	}

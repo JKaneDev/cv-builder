@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Button from './UIElements/Button';
 import Input from './UIElements/InputField';
+import Work from '../assets/work.svg';
+import Delete from '../assets/delete.svg';
 
 class ExperienceItem extends Component {
 	constructor(props) {
@@ -23,13 +25,13 @@ class ExperienceItem extends Component {
 		return (
 			<section>
 				<div>
-					<img src='' alt='work-img' id='work-img'></img>
+					<img src={Work} alt='work-img' id='work-img'></img>
 					<h3>
 						Work Experience #
 						{this.props.workExperience.findIndex((exp) => exp.id === id) + 1}
 					</h3>
 
-					<Button text='Delete' onClick={() => onExperienceDelete(id)} />
+					<Button img={Delete} onClick={() => onExperienceDelete(id)} />
 				</div>
 				<div>
 					<Input

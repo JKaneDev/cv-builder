@@ -5,7 +5,7 @@ class Button extends Component {
 		const { img, text, onClick } = this.props;
 		return (
 			<button onClick={onClick}>
-				{img}
+				<img src={img} id='svgs' style={{ height: 32, width: 32 }}></img>
 				{text}
 			</button>
 		);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExperienceItem from './ExperienceItem.js';
 import Button from './UIElements/Button';
+import Add from '../assets/add.svg';
 
 class Experience extends Component {
 	constructor(props) {
@@ -27,12 +28,9 @@ class Experience extends Component {
 		const { onExperienceAdd } = this.props;
 		return (
 			<section>
-				<div>
-					<img src='' alt='work-img' id='work-img'></img>
-					<h2>Practical Experience</h2>
-				</div>
-				{this.experienceItems}
-				<Button text='&plus; New' onClick={onExperienceAdd} />
+				<h2>Practical Experience</h2>
+				<div>{this.experienceItems}</div>
+				<Button img={Add} onClick={onExperienceAdd} />
 			</section>
 		);
 	}

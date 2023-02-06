@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Website from '../../assets/website.svg';
+import Email from '../../assets/email.svg';
+import Number from '../../assets/phone.svg';
+import Location from '../../assets/pin.svg';
 
 class Contact extends Component {
 	constructor(props) {
@@ -16,19 +20,19 @@ class Contact extends Component {
 			<aside>
 				<p>CONTACT</p>
 				<div>
-					<img src='' alt='website-img'></img>
+					<img src={Website} alt='website-img'></img>
 					<p>{this.website}</p>
 				</div>
 				<div>
-					<img src='' alt='email-img'></img>
+					<img src={Email} alt='email-img'></img>
 					<p>{this.email}</p>
 				</div>
 				<div>
-					<img src='' alt='location-img'></img>
+					<img src={Location} alt='location-img'></img>
 					<p>{this.location}</p>
 				</div>
 				<div>
-					<img src='' alt='phone-img'></img>
+					<img src={Number} alt='phone-img'></img>
 					<p>{this.number}</p>
 				</div>
 			</aside>

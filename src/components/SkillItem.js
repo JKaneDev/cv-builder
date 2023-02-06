@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from './UIElements/InputField';
 import Button from './UIElements/Button';
+import Delete from '../assets/delete.svg';
 
 class SkillItem extends Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ class SkillItem extends Component {
 					placeholder='E.g. React'
 					onChange={(event) => onSkillChange(id, skill, event.target.value)}
 				/>
-				<Button text='Delete' onClick={() => onSkillDelete(id)} />
+				<Button img={Delete} onClick={() => onSkillDelete(id)} />
 			</li>
 		);
 	}
