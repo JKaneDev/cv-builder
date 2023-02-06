@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import ExperienceItem from './ExperienceItemPreview';
 
-class Experience extends Component {
+class ExperiencePreview extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -9,7 +10,14 @@ class Experience extends Component {
 	}
 
 	experienceItems = this.state.experience.map((experience) => (
-		<ExperienceItem id={experience.id} experience={this.state.experience} />
+		<ExperienceItem
+			id={experience.id}
+			company={experience.company}
+			role={experience.role}
+			desc={experience.desc}
+			start={experience.start}
+			end={experience.end}
+		/>
 	));
 
 	render() {
@@ -23,4 +31,4 @@ class Experience extends Component {
 	}
 }
 
-export default Experience;
+export default ExperiencePreview;

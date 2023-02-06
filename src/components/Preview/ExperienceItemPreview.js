@@ -4,27 +4,24 @@ class ExperienceItem extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: this.props.id,
 			experience: this.props.experience,
 		};
 	}
 
-	const;
-
 	render() {
-		const { id } = this.props;
-		const { experience } = this.state;
-		const expItem = experience.find((item) => item.id === id);
+		const { id, company, role, desc, start, end } = this.state;
 		return (
-			<>
-				<h4>{expItem.role}</h4>
+			<div>
+				<h4>{role}</h4>
 				<div>
 					<p>
-						{expItem.company} | {expItem.start} - {expItem.end}
+						{company} | {start} - {end}
 					</p>
-					<p>{expItem.desc}</p>
+					<p>{desc}</p>
 				</div>
-			</>
+			</div>
 		);
 	}
 }
+
+export default ExperienceItem;
