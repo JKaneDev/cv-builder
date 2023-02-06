@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from './UIElements/Button';
+import Input from './UIElements/InputField';
 
 class ExperienceItem extends Component {
 	constructor(props) {
@@ -9,8 +11,9 @@ class ExperienceItem extends Component {
 	}
 
 	render() {
-		const { onExperienceDelete, onExperienceChange, id } = this.props;
-		const experience = this.state.workExperience.find((exp) => exp.id === id);
+		const { onExperienceDelete, onExperienceChange } = this.props;
+		const { id, company, role, desc, start, end } = this.state;
+
 		return (
 			<section>
 				<div>
@@ -20,50 +23,47 @@ class ExperienceItem extends Component {
 						{this.state.workExperience.findIndex((exp) => exp.id === id) + 1}
 					</h3>
 
-					<Button
-						text='Delete'
-						onClick={() => onExperienceDelete(experience.id)}
-					/>
+					<Button text='Delete' onClick={() => onExperienceDelete(id)} />
 				</div>
 				<div>
 					<Input
 						type='text'
-						value={experience.company}
+						value={company}
 						placeholder='E.g. Microsoft'
 						onChange={(event) =>
-							onExperienceChange(experience.id, company, event.target.value)
+							onExperienceChange(id, company, event.target.value)
 						}
 					/>
 					<Input
 						type='text'
-						value={experience.role}
+						value={role}
 						placeholder='E.g. Senior Software Engineer'
 						onChange={(event) =>
-							onExperienceChange(experience.id, role, event.target.value)
+							onExperienceChange(id, role, event.target.value)
 						}
 					/>
 					<Input
 						type='text'
-						value={experience.desc}
+						value={desc}
 						placeholder='Describe your main occupation, daily tasks, responsibilities etc.'
 						onChange={(event) =>
-							onExperienceChange(experience.id, desc, event.target.value)
+							onExperienceChange(id, desc, event.target.value)
 						}
 					/>
 					<Input
 						type='text'
-						value={experience.start}
+						value={start}
 						placeholder='E.g. June 2017'
 						onChange={(event) =>
-							onExperienceChange(experience.id, start, event.target.value)
+							onExperienceChange(id, start, event.target.value)
 						}
 					/>
 					<Input
 						type='text'
-						value={experience.end}
+						value={end}
 						placeholder='E.g. September 2019'
 						onChange={(event) =>
-							onExperienceChange(experience.id, end, event.target.value)
+							onExperienceChange(id, end, event.target.value)
 						}
 					/>
 				</div>
