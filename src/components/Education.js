@@ -15,12 +15,13 @@ class Education extends Component {
 		const [university, school] = education;
 		return (
 			<StyledEducation>
-				<h2>Educational Information</h2>
+				<p className='title'>Educational Information</p>
 				<div>
 					<img src={University} alt='university svg' id='uni-img' />
-					<p>University</p>
+					<p className='uni'>University</p>
 				</div>
 				<Input
+					name='institution'
 					type='text'
 					value={university.institution}
 					placeholder='E.g. Massachusetts Institute of Technology (M.I.T)'
@@ -29,6 +30,7 @@ class Education extends Component {
 					}
 				/>
 				<Input
+					name='degree'
 					type='text'
 					value={university.degree}
 					placeholder='E.g. Bsc Computer Science'
@@ -37,6 +39,7 @@ class Education extends Component {
 					}
 				/>
 				<Input
+					name='dates'
 					type='text'
 					value={university.dates}
 					placeholder='E.g. 2015 - 2019'
@@ -44,10 +47,11 @@ class Education extends Component {
 				/>
 				<div>
 					<img src={School} alt='school svg' id='school-img' />
-					<p>School</p>
+					<p className='school'>School</p>
 				</div>
 				<Input
 					type='text'
+					name='institution'
 					value={school.institution}
 					placeholder='E.g. Bale Valley Grammar School'
 					onChange={(event) =>
@@ -56,12 +60,14 @@ class Education extends Component {
 				/>
 				<Input
 					type='text'
+					name='degree'
 					value={school.degree}
 					placeholder='E.g. A-Levels: A A B'
 					onChange={(event) => onEducationChange(school.id, 'degree', event)}
 				/>
 				<Input
 					type='text'
+					name='dates'
 					value={school.dates}
 					placeholder='E.g. 2008 - 2015'
 					onChange={(event) => onEducationChange(school.id, 'dates', event)}
@@ -97,10 +103,14 @@ const StyledEducation = styled.div`
 		align-items: center;
 		gap: 0.5rem;
 		letter-spacing: 0.2rem;
+		margin-bottom: 0.35rem 0;
 	}
 
-	p {
-		margin: 0.5rem 0;
+	.title {
+		font-size: 3ch;
+		letter-spacing: 0.3rem;
+		font-weight: bold;
+		padding-bottom: 1rem;
 	}
 `;
 
