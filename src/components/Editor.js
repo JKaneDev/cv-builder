@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-// import ReactPDF from 'react-pdf';
 import { autofill } from './Utils/autofill';
 import Preview from './Preview/Preview';
 import Header from './Header';
@@ -8,6 +7,7 @@ import Personal from './Personal';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
+import styled, { css } from 'styled-components';
 
 class Editor extends Component {
 	constructor(props) {
@@ -134,7 +134,7 @@ class Editor extends Component {
 
 	render() {
 		return (
-			<div>
+			<StyledEditor>
 				<Header onAutofill={this.handleAutofill} onSave={this.generatePDF} />
 				<Personal
 					personal={this.state.personal}
@@ -164,9 +164,22 @@ class Editor extends Component {
 					experience={this.state.workExperience}
 					skills={this.state.skills}
 				/>
-			</div>
+			</StyledEditor>
 		);
 	}
 }
+
+const StyledEditor = styled.div`
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	margin: 0;
+	padding: 1rem;
+	color: ${({ theme }) => theme.colors.fontColor};
+	font-family: 'Helvetica', 'Futura', 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
 
 export default Editor;
