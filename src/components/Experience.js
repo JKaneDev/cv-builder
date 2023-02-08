@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ExperienceItem from './ExperienceItem.js';
 import Button from './UIElements/Button';
 import Add from '../assets/add.svg';
+import styled from 'styled-components';
 
 class Experience extends Component {
 	constructor(props) {
@@ -27,13 +28,50 @@ class Experience extends Component {
 	render() {
 		const { onExperienceAdd } = this.props;
 		return (
-			<section>
+			<StyledExperience>
 				<h2>Practical Experience</h2>
 				<div>{this.experienceItems}</div>
 				<Button img={Add} onClick={onExperienceAdd} />
-			</section>
+			</StyledExperience>
 		);
 	}
 }
+
+const StyledExperience = styled.div`
+	background-color: ${({ theme }) => theme.colors.subBackground};
+	padding: 2rem;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	input {
+		background-color: ${({ theme }) => theme.colors.inputFields};
+		color: ${({ theme }) => theme.colors.fontColor};
+		height: 4ch;
+		padding: 0.35rem 1rem;
+		border-radius: 8px;
+		letter-spacing: 0.1rem;
+	}
+
+	img {
+		filter: ${({ theme }) => theme.filters.mainFilter};
+		transition: 0.1s all ease-in-out;
+	}
+
+	button {
+		margin-top: 1rem;
+		transition: 0.2s all ease-in-out;
+	}
+
+	button:hover {
+		border-bottom: 1px solid ${({ theme }) => theme.colors.elemBorderColor};
+		transform: translateY(-2.5%);
+	}
+
+	button:hover img {
+		filter: ${({ theme }) => theme.filters.hoverFilterAlt};
+	}
+`;
 
 export default Experience;

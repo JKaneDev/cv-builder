@@ -3,6 +3,7 @@ import Button from './UIElements/Button';
 import Input from './UIElements/InputField';
 import Work from '../assets/work.svg';
 import Delete from '../assets/delete.svg';
+import styled from 'styled-components';
 
 class ExperienceItem extends Component {
 	constructor(props) {
@@ -23,13 +24,15 @@ class ExperienceItem extends Component {
 		} = this.props;
 
 		return (
-			<section>
+			<StyledExpItem>
 				<div>
-					<img src={Work} alt='work-img' id='work-img'></img>
-					<h3>
-						Work Experience #
-						{this.props.workExperience.findIndex((exp) => exp.id === id) + 1}
-					</h3>
+					<div>
+						<img src={Work} alt='work-img' id='work-img'></img>
+						<p>
+							Work Experience #
+							{this.props.workExperience.findIndex((exp) => exp.id === id) + 1}
+						</p>
+					</div>
 
 					<Button img={Delete} onClick={() => onExperienceDelete(id)} />
 				</div>
@@ -75,9 +78,56 @@ class ExperienceItem extends Component {
 						}
 					/>
 				</div>
-			</section>
+			</StyledExpItem>
 		);
 	}
 }
+
+const StyledExpItem = styled.section`
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	div:nth-of-type(1) {
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.15rem;
+		gap: 0.5rem;
+	}
+
+	div:nth-of-type(1) div {
+		padding-top: 1rem;
+	}
+
+	div:nth-of-type(1) button {
+		width: 50px;
+		height: 30px;
+		border-radius: 8px;
+		border: none;
+		margin-left: auto;
+		transition: 0.2s all ease-in-out;
+	}
+
+	div:nth-of-type(1) button:hover {
+		transform: translateY(-2.5%);
+	}
+
+	div:nth-of-type(1) button:hover img {
+		filter: ${({ theme }) => theme.filters.hoverFilterAlt};
+		transform: translateY(-2.5%);
+	}
+
+	div:nth-of-type(1) button img {
+		height: 24px;
+		width: 24px;
+		transition: 0.1s all ease-in-out;
+	}
+
+	div:nth-of-type(2) {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+`;
 
 export default ExperienceItem;
