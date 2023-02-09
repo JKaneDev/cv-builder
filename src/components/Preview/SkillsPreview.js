@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SkillItem from './SkillItemPreview';
+import styled from 'styled-components';
 
 class Skills extends Component {
 	constructor(props) {
@@ -13,12 +14,23 @@ class Skills extends Component {
 
 	render() {
 		return (
-			<aside>
-				<h3>SKILLS</h3>
+			<StyledSkillsPreview>
+				<p className='sectionHeader'>SKILLS</p>
 				<div>{this.skillItems}</div>
-			</aside>
+			</StyledSkillsPreview>
 		);
 	}
 }
+
+const StyledSkillsPreview = styled.aside`
+	background-color: #111;
+	padding: 2rem 0.5rem 1rem 1.5rem;
+
+	.sectionHeader {
+		letter-spacing: 0.1rem;
+		font-size: 1.6ch;
+		margin-bottom: 1rem;
+	}
+`;
 
 export default Skills;

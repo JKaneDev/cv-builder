@@ -39,6 +39,10 @@ const StyledSkillItem = styled.li`
 		width: 60%;
 	}
 
+	input::placeholder {
+		color: #111;
+	}
+
 	button {
 		width: 50px;
 		height: 30px;

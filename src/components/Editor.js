@@ -180,10 +180,15 @@ const StyledEditor = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 
 	> * {
 		width: 500px;
+	}
+
+	input:active,
+	input:focus {
+		background-color: #2d2d2d;
 	}
 `;
 

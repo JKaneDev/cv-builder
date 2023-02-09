@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 class SkillItem extends Component {
 	constructor(props) {
@@ -9,11 +10,17 @@ class SkillItem extends Component {
 	render() {
 		const { skill } = this.props;
 		return (
-			<div>
+			<StyledItemPreview>
 				<p>&bull; {skill}</p>
-			</div>
+			</StyledItemPreview>
 		);
 	}
 }
+
+const StyledItemPreview = styled.li`
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+`;
 
 export default SkillItem;

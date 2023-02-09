@@ -96,7 +96,8 @@ const StyledExpItem = styled.section`
 	}
 
 	div:nth-of-type(1) div {
-		padding-top: 1rem;
+		display: flex;
+		align-items: center;
 	}
 
 	div:nth-of-type(1) button {

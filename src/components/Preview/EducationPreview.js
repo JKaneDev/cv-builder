@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 class Education extends Component {
 	constructor(props) {
@@ -15,8 +16,8 @@ class Education extends Component {
 
 	render() {
 		return (
-			<aside>
-				<p>EDUCATION</p>
+			<StyledEducationPreview>
+				<p className='sectionHeader'>EDUCATION</p>
 				<div>
 					<h3>{this.state.degree}</h3>
 					<p>{this.state.university}</p>
@@ -27,9 +28,20 @@ class Education extends Component {
 					<p>{this.state.school}</p>
 					<p>{this.state.schoolDates}</p>
 				</div>
-			</aside>
+			</StyledEducationPreview>
 		);
 	}
 }
+
+const StyledEducationPreview = styled.aside`
+	background-color: #111;
+	padding: 2rem 0.5rem 1rem 1.5rem;
+
+	.sectionHeader {
+		letter-spacing: 0.1rem;
+		font-size: 1.6ch;
+		margin-bottom: 1rem;
+	}
+`;
 
 export default Education;

@@ -29,7 +29,7 @@ class Experience extends Component {
 		const { onExperienceAdd } = this.props;
 		return (
 			<StyledExperience>
-				<h2>Practical Experience</h2>
+				<p className='title'>Practical Experience</p>
 				<div>{this.experienceItems}</div>
 				<Button img={Add} onClick={onExperienceAdd} />
 			</StyledExperience>
@@ -78,6 +78,12 @@ const StyledExperience = styled.div`
 
 	input::placeholder {
 		color: #111;
+	}
+
+	.title {
+		font-size: 3ch;
+		letter-spacing: 0.3rem;
+		font-weight: bold;
 	}
 `;
 

@@ -3,6 +3,7 @@ import Website from '../../assets/website.svg';
 import Email from '../../assets/email.svg';
 import Number from '../../assets/phone.svg';
 import Location from '../../assets/pin.svg';
+import styled from 'styled-components';
 
 class Contact extends Component {
 	constructor(props) {
@@ -17,27 +18,51 @@ class Contact extends Component {
 
 	render() {
 		return (
-			<aside>
-				<p>CONTACT</p>
-				<div>
+			<StyledContact>
+				<p className='sectionHeader'>CONTACT</p>
+				<li>
 					<img src={Website} alt='website-img'></img>
 					<p>{this.website}</p>
-				</div>
-				<div>
+				</li>
+				<li>
 					<img src={Email} alt='email-img'></img>
 					<p>{this.email}</p>
-				</div>
-				<div>
+				</li>
+				<li>
 					<img src={Location} alt='location-img'></img>
 					<p>{this.location}</p>
-				</div>
-				<div>
+				</li>
+				<li>
 					<img src={Number} alt='phone-img'></img>
 					<p>{this.number}</p>
-				</div>
-			</aside>
+				</li>
+			</StyledContact>
 		);
 	}
 }
+
+const StyledContact = styled.aside`
+	background-color: #111;
+	padding: 2rem 0.5rem 1rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	.sectionHeader {
+		letter-spacing: 0.1rem;
+		font-size: 1.6ch;
+		margin-bottom: 1rem;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	img {
+		filter: ${({ theme }) => theme.filters.hoverFilter};
+		height: 14px;
+		width: 14px;
+	}
+`;
 
 export default Contact;
