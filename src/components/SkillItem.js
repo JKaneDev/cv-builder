@@ -48,6 +48,9 @@ const StyledSkillItem = styled.li`
 		margin-left: auto;
 		position: relative;
 		bottom: 0.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	button:hover {
@@ -64,6 +67,7 @@ const StyledSkillItem = styled.li`
 		height: 24px;
 		width: 24px;
 		transition: 0.1s all ease-in-out;
+		padding: 0.3rem;
 	}
 `;
 

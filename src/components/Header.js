@@ -59,15 +59,30 @@ const StyledHeader = styled.header`
 	}
 
 	div:nth-of-type(2) > * {
-		border-radius: 12px;
+		border-radius: 8px;
 		font-size: 1.25ch;
 		letter-spacing: 0.1rem;
 		transition: 0.15s all ease-in-out;
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		align-items: center;
+		padding: 0.5rem 1rem;
+	}
+
+	div:nth-of-type(2) img {
+		filter: ${({ theme }) => theme.filters.hoverFilter};
+		transition: all 0.1s ease-in-out;
 	}
 
 	div:nth-of-type(2) > *:hover {
-		border-bottom: 1px solid ${({ theme }) => theme.colors.elemBorderColor};
 		transform: translateY(-2.5%);
+		color: ${({ theme }) => theme.colors.elemBorderColor};
+	}
+
+	div:nth-of-type(2) > *:hover img {
+		filter: ${({ theme }) => theme.filters.hoverFilterAlt};
+	}
 `;
 
 export default Header;

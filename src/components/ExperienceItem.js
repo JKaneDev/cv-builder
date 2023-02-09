@@ -53,7 +53,7 @@ class ExperienceItem extends Component {
 							onExperienceChange(id, role, event.target.value)
 						}
 					/>
-					<Input
+					<textarea
 						type='text'
 						value={desc}
 						placeholder='Describe your main occupation, daily tasks, responsibilities etc.'
@@ -106,6 +106,9 @@ const StyledExpItem = styled.section`
 		border: none;
 		margin-left: auto;
 		transition: 0.2s all ease-in-out;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	div:nth-of-type(1) button:hover {
@@ -121,12 +124,27 @@ const StyledExpItem = styled.section`
 		height: 24px;
 		width: 24px;
 		transition: 0.1s all ease-in-out;
+		padding: 0.3rem;
 	}
 
 	div:nth-of-type(2) {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	textarea {
+		background-color: ${({ theme }) => theme.colors.inputFields};
+		color: ${({ theme }) => theme.colors.fontColor};
+		height: 4ch;
+		padding: 0.35rem 1rem;
+		border-radius: 8px;
+		letter-spacing: 0.1rem;
+		min-height: 60px;
+	}
+
+	textarea::placeholder {
+		color: #111;
 	}
 `;
 

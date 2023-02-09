@@ -62,15 +62,22 @@ const StyledExperience = styled.div`
 	button {
 		margin-top: 1rem;
 		transition: 0.2s all ease-in-out;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.25rem;
 	}
 
 	button:hover {
-		border-bottom: 1px solid ${({ theme }) => theme.colors.elemBorderColor};
 		transform: translateY(-2.5%);
 	}
 
 	button:hover img {
 		filter: ${({ theme }) => theme.filters.hoverFilterAlt};
+	}
+
+	input::placeholder {
+		color: #111;
 	}
 `;
 

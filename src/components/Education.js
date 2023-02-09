@@ -112,6 +112,10 @@ const StyledEducation = styled.div`
 		font-weight: bold;
 		padding-bottom: 1rem;
 	}
+
+	input::placeholder {
+		color: #111;
+	}
 `;
 
 export default Education;

@@ -170,7 +170,7 @@ class Editor extends Component {
 }
 
 const StyledEditor = styled.div`
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 	background-color: black;
 	margin: 0;
@@ -180,6 +180,11 @@ const StyledEditor = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 1rem;
+
+	> * {
+		width: 500px;
+	}
 `;
 
 export default Editor;

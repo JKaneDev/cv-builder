@@ -118,7 +118,7 @@ const StyledPersonal = styled.div`
 
 	input::placeholder,
 	textarea::placeholder {
-		color: #111111;
+		color: #111;
 	}
 `;
 
