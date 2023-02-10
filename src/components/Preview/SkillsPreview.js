@@ -8,15 +8,15 @@ class Skills extends Component {
 		this.state = {};
 	}
 
-	skillItems = this.props.skills.map((skill) => (
-		<SkillItem id={skill.id} skill={skill.skill} key={skill.id} />
-	));
-
 	render() {
 		return (
 			<StyledSkillsPreview>
 				<p className='sectionHeader'>SKILLS</p>
-				<div>{this.skillItems}</div>
+				<div>
+					{this.props.skills.map((skill) => (
+						<SkillItem id={skill.id} skill={skill.skill} key={skill.id} />
+					))}
+				</div>
 			</StyledSkillsPreview>
 		);
 	}

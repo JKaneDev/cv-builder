@@ -4,17 +4,16 @@ import styled from 'styled-components';
 class Profile extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			bio: this.props.bio,
-		};
+		this.state = {};
 	}
 
 	render() {
+		const { bio } = this.props;
 		return (
 			<StyledProfilePreview>
 				<p>PROFILE</p>
 				<span className='partial-underline'>_______________</span>
-				<p>{this.state.bio}</p>
+				<p>{bio}</p>
 			</StyledProfilePreview>
 		);
 	}

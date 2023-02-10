@@ -8,24 +8,22 @@ class ExperiencePreview extends Component {
 		this.state = {};
 	}
 
-	experienceItems = this.props.experience.map((experience) => (
-		<ExperienceItem
-			id={experience.id}
-			key={experience.id}
-			company={experience.company}
-			role={experience.role}
-			desc={experience.desc}
-			start={experience.start}
-			end={experience.end}
-		/>
-	));
-
 	render() {
 		return (
 			<StyledExperiencePreview>
 				<p>WORK EXPERIENCE</p>
 				<span className='partial-underline'>_______________</span>
-				{this.experienceItems}
+				{this.props.experience.map((experience) => (
+					<ExperienceItem
+						id={experience.id}
+						key={experience.id}
+						company={experience.company}
+						role={experience.role}
+						desc={experience.desc}
+						start={experience.start}
+						end={experience.end}
+					/>
+				))}
 			</StyledExperiencePreview>
 		);
 	}

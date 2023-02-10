@@ -4,29 +4,24 @@ import styled from 'styled-components';
 class Education extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			university: this.props.university,
-			degree: this.props.degree,
-			uniDates: this.props.uniDates,
-			school: this.props.school,
-			diploma: this.props.diploma,
-			schoolDates: this.props.schoolDates,
-		};
+		this.state = {};
 	}
 
 	render() {
+		const { university, degree, uniDates, school, diploma, schoolDates } =
+			this.props;
 		return (
 			<StyledEducationPreview>
 				<p className='sectionHeader'>EDUCATION</p>
 				<div>
-					<h3>{this.state.degree}</h3>
-					<p>{this.state.university}</p>
-					<p>{this.state.uniDates}</p>
+					<h3>{degree}</h3>
+					<p>{university}</p>
+					<p>{uniDates}</p>
 				</div>
 				<div>
-					<h3>{this.state.diploma}</h3>
-					<p>{this.state.school}</p>
-					<p>{this.state.schoolDates}</p>
+					<h3>{diploma}</h3>
+					<p>{school}</p>
+					<p>{schoolDates}</p>
 				</div>
 			</StyledEducationPreview>
 		);

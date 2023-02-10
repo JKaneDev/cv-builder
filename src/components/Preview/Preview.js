@@ -10,44 +10,40 @@ import styled from 'styled-components';
 class Preview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			personal: this.props.personal,
-			education: this.props.education,
-			experience: this.props.experience,
-			skills: this.props.skills,
-		};
+		this.state = {};
 	}
 
 	render() {
+		const { personal, education, experience, skills } = this.props;
 		return (
 			<StyledPreview>
 				<div className='header'>
 					<Header
-						firstName={this.state.personal.firstName}
-						surname={this.state.personal.surname}
-						role={this.state.experience[0].role}
+						firstName={personal.firstName}
+						surname={personal.surname}
+						role={experience[0].role}
 					/>
 				</div>
 				<div className='wrapper-one'>
 					<Contact
-						website={this.state.personal.website}
-						email={this.state.personal.email}
-						location={this.state.personal.address}
-						number={this.state.personal.number}
+						website={personal.website}
+						email={personal.email}
+						location={personal.address}
+						number={personal.number}
 					/>
 					<Education
-						university={this.state.education[0].institution}
-						degree={this.state.education[0].degree}
-						uniDates={this.state.education[0].dates}
-						school={this.state.education[1].institution}
-						diploma={this.state.education[1].degree}
-						schoolDates={this.state.education[1].dates}
+						university={education[0].institution}
+						degree={education[0].degree}
+						uniDates={education[0].dates}
+						school={education[1].institution}
+						diploma={education[1].degree}
+						schoolDates={education[1].dates}
 					/>
-					<Skills skills={this.state.skills} />
+					<Skills skills={skills} />
 				</div>
 				<div>
-					<Profile bio={this.state.personal.bio} />
-					<ExperiencePreview experience={this.state.experience} />
+					<Profile bio={personal.bio} />
+					<ExperiencePreview experience={experience} />
 				</div>
 			</StyledPreview>
 		);

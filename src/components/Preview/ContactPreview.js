@@ -8,33 +8,29 @@ import styled from 'styled-components';
 class Contact extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			website: this.props.website,
-			email: this.props.email,
-			location: this.props.location,
-			number: this.props.number,
-		};
+		this.state = {};
 	}
 
 	render() {
+		const { website, email, location, number } = this.props;
 		return (
 			<StyledContact>
 				<p className='sectionHeader'>CONTACT</p>
 				<li>
 					<img src={Website} alt='website-img'></img>
-					<p>{this.website}</p>
+					<p>{website}</p>
 				</li>
 				<li>
 					<img src={Email} alt='email-img'></img>
-					<p>{this.email}</p>
+					<p>{email}</p>
 				</li>
 				<li>
 					<img src={Location} alt='location-img'></img>
-					<p>{this.location}</p>
+					<p>{location}</p>
 				</li>
 				<li>
 					<img src={Number} alt='phone-img'></img>
-					<p>{this.number}</p>
+					<p>{number}</p>
 				</li>
 			</StyledContact>
 		);

@@ -4,21 +4,18 @@ import styled from 'styled-components';
 class Header extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			firstName: this.props.firstName,
-			surname: this.props.surname,
-			role: this.props.role,
-		};
+		this.state = {};
 	}
 
 	render() {
+		const { firstName, surname, role } = this.props;
 		return (
 			<StyledHeader>
 				<div className='name'>
-					<p>{this.state.firstName}</p>
-					<p>{this.state.surname}</p>
+					<p>{firstName}</p>
+					<p>{surname}</p>
 				</div>
-				<div className='role'>{this.state.role}</div>
+				<div className='role'>{role}</div>
 			</StyledHeader>
 		);
 	}
@@ -52,6 +49,12 @@ const StyledHeader = styled.div`
 		border-top: 0.5px solid grey;
 		border-bottom: 0.5px solid grey;
 		grid-row: 2 / -1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #111;
+		letter-spacing: 0.3rem;
+		font-size: 1.5ch;
 	}
 `;
 
