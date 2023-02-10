@@ -43,6 +43,7 @@ const StyledContact = styled.aside`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	line-height: 1rem;
 
 	.sectionHeader {
 		letter-spacing: 0.1rem;
@@ -52,6 +53,12 @@ const StyledContact = styled.aside`
 
 	li {
 		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.25ch;
+		letter-spacing: 0.05rem;
+		color: #808080;
 	}
 
 	img {

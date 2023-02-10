@@ -9,18 +9,18 @@ const exampleData = {
 		website: 'http://davyjoneslocker.io',
 		email: 'davyjones@locker.com',
 		number: '555-555-5555',
-		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas laoreet ipsum, in placerat enim sagittis id. Quisque aliquet metus eu turpis sagittis, ac blandit erat sollicitudin. Nam rutrum, orci ac suscipit viverra, lacus lorem auctor tellus, a volutpat enim est vel velit.',
+		bio: 'A seasoned and dedicated Senior JavaScript Engineer with 6 years of experience in developing and maintaining complex web applications. Proficient in modern JavaScript frameworks such as React, libraries such as Vite, and experienced in using Node.js for server-side development. A strong believer in creating clean, maintainable, and scalable code, as well as adhering to Agile methodologies. Committed to delivering high-quality solutions to meet business requirements and improve user experience.',
 	},
 	education: [
 		{
 			id: uuidv4(),
-			institution: 'Massachusetts Institute of Technology. (M.I.T)',
+			institution: 'University Of London',
 			degree: 'BSc Computer Science',
 			dates: '2017 - 2019',
 		},
 		{
 			id: uuidv4(),
-			institution: 'Belfast Royal Academic College',
+			institution: 'Belfast Royal College',
 			degree: 'A-Levels: A* A* A* A*',
 			dates: '2008 - 2015',
 		},

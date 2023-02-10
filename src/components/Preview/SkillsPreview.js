@@ -25,6 +25,8 @@ class Skills extends Component {
 const StyledSkillsPreview = styled.aside`
 	background-color: #111;
 	padding: 2rem 0.5rem 1rem 1.5rem;
+	display: flex;
+	flex-direction: column;
 
 	.sectionHeader {
 		letter-spacing: 0.1rem;

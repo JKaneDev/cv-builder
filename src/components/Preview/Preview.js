@@ -53,7 +53,7 @@ class Preview extends Component {
 const StyledPreview = styled.div`
 	background-color: ${({ theme }) => theme.colors.fontColor};
 	border-radius: 12px;
-	height: 700px;
+	height: 750px;
 	display: grid;
 	grid-template-columns: 1.3fr 3fr;
 	grid-template-rows: 130px 30px 1fr;

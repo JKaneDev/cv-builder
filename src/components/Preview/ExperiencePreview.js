@@ -11,7 +11,7 @@ class ExperiencePreview extends Component {
 	render() {
 		return (
 			<StyledExperiencePreview>
-				<p>WORK EXPERIENCE</p>
+				<p className='title'>WORK EXPERIENCE</p>
 				<span className='partial-underline'>_______________</span>
 				{this.props.experience.map((experience) => (
 					<ExperienceItem
@@ -30,8 +30,11 @@ class ExperiencePreview extends Component {
 }
 
 const StyledExperiencePreview = styled.section`
-	padding: 2rem 0 0 1.25rem;
+	padding: 2rem 1rem 0 2rem;
 
+	.title {
+		font-size: 1.75ch;
+	}
 	p {
 		color: ${({ theme }) => theme.colors.mainBackground};
 		letter-spacing: 0.3rem;

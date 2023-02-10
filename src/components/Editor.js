@@ -184,7 +184,7 @@ const StyledEditor = styled.div`
 	gap: 1.5rem;
 
 	> * {
-		width: 500px;
+		width: 550px;
 	}
 
 	input:hover,

@@ -20,7 +20,12 @@ class SkillItem extends Component {
 const StyledItemPreview = styled.li`
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 1rem;
+	font-size: 1.25ch;
+	letter-spacing: 0.05rem;
+	margin-top: 0.5rem;
+	color: #808080;
+	line-height: 1rem;
 `;
 
 export default SkillItem;

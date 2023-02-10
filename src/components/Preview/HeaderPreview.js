@@ -12,8 +12,8 @@ class Header extends Component {
 		return (
 			<StyledHeader>
 				<div className='name'>
-					<p>{firstName}</p>
-					<p>{surname}</p>
+					<p className='firstName'>{firstName}</p>
+					<p className='surname'>{surname}</p>
 				</div>
 				<div className='role'>{role}</div>
 			</StyledHeader>
@@ -30,16 +30,13 @@ const StyledHeader = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 3rem;
+		gap: 2rem;
 		font-size: 5ch;
 		color: ${({ theme }) => theme.colors.mainBackground};
+		letter-spacing: 0.25rem;
 	}
 
-	.name nth-child(1) {
-		font-weight: bolder;
-	}
-
-	.name nth-child(2) {
+	.firstName {
 		font-weight: bold;
 	}
 
