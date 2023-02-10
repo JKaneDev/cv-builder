@@ -19,7 +19,7 @@ class SkillItem extends Component {
 					type='text'
 					value={skill}
 					placeholder='E.g. React'
-					onChange={(event) => onSkillChange(id, skill, event.target.value)}
+					onChange={(event) => onSkillChange(id, 'skill', event)}
 				/>
 				<Button
 					className='btn'

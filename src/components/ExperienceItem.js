@@ -12,16 +12,8 @@ class ExperienceItem extends Component {
 	}
 
 	render() {
-		const {
-			onExperienceDelete,
-			onExperienceChange,
-			id,
-			company,
-			role,
-			desc,
-			start,
-			end,
-		} = this.props;
+		const { onExperienceDelete, onExperienceChange, item, workExperience } =
+			this.props;
 
 		return (
 			<StyledExpItem>
@@ -30,52 +22,47 @@ class ExperienceItem extends Component {
 						<img src={Work} alt='work-img' id='work-img'></img>
 						<p>
 							Work Experience #
-							{this.props.workExperience.findIndex((exp) => exp.id === id) + 1}
+							{workExperience.findIndex((exp) => exp.id === item.id) + 1}
 						</p>
 					</div>
 
-					<Button img={Delete} onClick={() => onExperienceDelete(id)} />
+					<Button img={Delete} onClick={() => onExperienceDelete(item.id)} />
 				</div>
 				<div>
 					<Input
+						name='company'
 						type='text'
-						value={company}
+						value={item.company}
 						placeholder='E.g. Microsoft'
-						onChange={(event) =>
-							onExperienceChange(id, company, event.target.value)
-						}
+						onChange={(event) => onExperienceChange(item.id, 'company', event)}
 					/>
 					<Input
+						name='role'
 						type='text'
-						value={role}
+						value={item.role}
 						placeholder='E.g. Senior Software Engineer'
-						onChange={(event) =>
-							onExperienceChange(id, role, event.target.value)
-						}
+						onChange={(event) => onExperienceChange(item.id, 'role', event)}
 					/>
 					<textarea
+						name='desc'
 						type='text'
-						value={desc}
+						value={item.desc}
 						placeholder='Describe your main occupation, daily tasks, responsibilities etc.'
-						onChange={(event) =>
-							onExperienceChange(id, desc, event.target.value)
-						}
+						onChange={(event) => onExperienceChange(item.id, 'desc', event)}
 					/>
 					<Input
+						name='start'
 						type='text'
-						value={start}
+						value={item.start}
 						placeholder='E.g. June 2017'
-						onChange={(event) =>
-							onExperienceChange(id, start, event.target.value)
-						}
+						onChange={(event) => onExperienceChange(item.id, 'start', event)}
 					/>
 					<Input
+						name='end'
 						type='text'
-						value={end}
+						value={item.end}
 						placeholder='E.g. September 2019'
-						onChange={(event) =>
-							onExperienceChange(id, end, event.target.value)
-						}
+						onChange={(event) => onExperienceChange(item.id, 'end', event)}
 					/>
 				</div>
 			</StyledExpItem>

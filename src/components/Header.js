@@ -48,7 +48,7 @@ const StyledHeader = styled.header`
 
 	div p {
 		letter-spacing: 0.3rem;
-		font-size: 3ch;
+		font-size: 2.5ch;
 	}
 
 	div:nth-of-type(2) {
@@ -65,7 +65,7 @@ const StyledHeader = styled.header`
 		transition: 0.15s all ease-in-out;
 		display: flex;
 		justify-content: center;
-		gap: 0.5rem;
+		gap: 0.25rem;
 		align-items: center;
 		padding: 0.5rem 1rem;
 	}

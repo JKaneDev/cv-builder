@@ -51,7 +51,7 @@ const StyledContact = styled.aside`
 	.sectionHeader {
 		letter-spacing: 0.1rem;
 		font-size: 1.6ch;
-		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
 	}
 
 	li {
@@ -60,8 +60,8 @@ const StyledContact = styled.aside`
 
 	img {
 		filter: ${({ theme }) => theme.filters.hoverFilter};
-		height: 14px;
-		width: 14px;
+		height: 12px;
+		width: 12px;
 	}
 `;
 

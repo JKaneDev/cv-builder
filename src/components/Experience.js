@@ -10,27 +10,27 @@ class Experience extends Component {
 		this.state = {};
 	}
 
-	experienceItems = this.props.workExperience.map((item) => (
-		<ExperienceItem
-			workExperience={this.props.workExperience}
-			id={item.id}
-			key={item.id}
-			company={item.company}
-			role={item.role}
-			desc={item.desc}
-			start={item.start}
-			end={item.end}
-			onExperienceChange={this.props.onExperienceChange}
-			onExperienceDelete={this.props.onExperienceDelete}
-		/>
-	));
-
 	render() {
-		const { onExperienceAdd } = this.props;
+		const {
+			onExperienceAdd,
+			workExperience,
+			onExperienceChange,
+			onExperienceDelete,
+		} = this.props;
 		return (
 			<StyledExperience>
 				<p className='title'>Practical Experience</p>
-				<div>{this.experienceItems}</div>
+				<div>
+					{this.props.workExperience.map((item) => (
+						<ExperienceItem
+							workExperience={workExperience}
+							key={item.id}
+							item={item}
+							onExperienceChange={onExperienceChange}
+							onExperienceDelete={onExperienceDelete}
+						/>
+					))}
+				</div>
 				<Button img={Add} onClick={onExperienceAdd} />
 			</StyledExperience>
 		);

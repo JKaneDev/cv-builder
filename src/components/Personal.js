@@ -102,11 +102,6 @@ const StyledPersonal = styled.div`
 		letter-spacing: 0.1rem;
 	}
 
-	input:hover,
-	textarea:hover {
-		background-color: #2d2d2d;
-	}
-
 	textarea {
 		background-color: ${({ theme }) => theme.colors.inputFields};
 		color: ${({ theme }) => theme.colors.fontColor};

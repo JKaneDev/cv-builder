@@ -72,13 +72,12 @@ class Editor extends Component {
 	};
 
 	handleExperienceChange = (id, field, event) => {
-		const newExp = event.target.value;
 		this.setState((prevState) => ({
 			workExperience: prevState.workExperience.map((job) => {
 				if (job.id === id) {
 					return {
 						...job,
-						[field]: newExp,
+						[field]: event.target.value,
 					};
 				}
 				return job;
@@ -107,18 +106,20 @@ class Editor extends Component {
 	};
 
 	handleSkillsChange = (id, field, event) => {
-		const newSkill = event.target.value;
-		this.setState((prevState) => ({
-			skills: prevState.skills.map((skill) => {
-				if (skill.id === id) {
-					return {
-						...skill,
-						[field]: newSkill,
-					};
-				}
-				return skill;
+		this.setState(
+			(prevState) => ({
+				skills: prevState.skills.map((skill) => {
+					if (skill.id === id) {
+						return {
+							...skill,
+							[field]: event.target.value,
+						};
+					}
+					return skill;
+				}),
 			}),
-		}));
+			() => console.log(this.state.skills[0])
+		);
 	};
 
 	handleSkillsAdd = () => {
@@ -184,6 +185,11 @@ const StyledEditor = styled.div`
 
 	> * {
 		width: 500px;
+	}
+
+	input:hover,
+	textarea:hover {
+		background-color: #2d2d2d;
 	}
 
 	input:active,

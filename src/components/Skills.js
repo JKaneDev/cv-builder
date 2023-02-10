@@ -11,18 +11,8 @@ class Skills extends Component {
 		this.state = {};
 	}
 
-	skillItems = this.props.skills.map((skill) => (
-		<SkillItem
-			id={skill.id}
-			key={skill.id}
-			skill={skill.skill}
-			onSkillChange={this.props.onSkillsChange}
-			onSkillDelete={this.props.onSkillsDelete}
-		/>
-	));
-
 	render() {
-		const { handleSkillsAdd } = this.props;
+		const { handleSkillsAdd, onSkillsChange, onSkillsDelete } = this.props;
 
 		return (
 			<StyledSkills>
@@ -30,7 +20,17 @@ class Skills extends Component {
 					<img src={SkillIcon} alt='skills-img' id='skills-img'></img>
 					<p className='title'>Skills & Technologies</p>
 				</div>
-				<ul>{this.skillItems}</ul>
+				<ul>
+					{this.props.skills.map((skill) => (
+						<SkillItem
+							id={skill.id}
+							key={skill.id}
+							skill={skill.skill}
+							onSkillChange={onSkillsChange}
+							onSkillDelete={onSkillsDelete}
+						/>
+					))}
+				</ul>
 				<Button img={Add} onClick={handleSkillsAdd} />
 			</StyledSkills>
 		);
