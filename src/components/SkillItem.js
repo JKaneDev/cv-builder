@@ -73,6 +73,24 @@ const StyledSkillItem = styled.li`
 		transition: 0.1s all ease-in-out;
 		padding: 0.3rem;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		button {
+			height: 35px;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		button {
+			height: 35px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		button {
+			height: 40px;
+		}
+	}
 `;
 
 export default SkillItem;

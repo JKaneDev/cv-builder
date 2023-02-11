@@ -141,6 +141,24 @@ const StyledExpItem = styled.section`
 	textarea::placeholder {
 		color: #111;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		p {
+			font-size: 2ch;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		p {
+			font-size: 2.25ch;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		p {
+			font-size: 2.5ch;
+		}
+	}
 `;
 
 export default ExperienceItem;

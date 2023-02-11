@@ -85,6 +85,39 @@ const StyledExperience = styled.div`
 		letter-spacing: 0.3rem;
 		font-weight: bold;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		input {
+			height: 35px;
+			font-size: 1.75ch;
+		}
+		textarea {
+			font-size: 1.75ch;
+			height: 5ch;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		input {
+			height: 40px;
+			font-size: 2ch;
+		}
+		textarea {
+			font-size: 2ch;
+			height: 10 ch;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		input {
+			height: 40px;
+			font-size: 2ch;
+		}
+		textarea {
+			font-size: 2ch;
+			height: 10 ch;
+		}
+	}
 `;
 
 export default Experience;

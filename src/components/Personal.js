@@ -115,6 +115,27 @@ const StyledPersonal = styled.div`
 	textarea::placeholder {
 		color: #111;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		input {
+			height: 35px;
+			font-size: 1.75ch;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		input {
+			height: 40px;
+			font-size: 2ch;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		input {
+			height: 40px;
+			font-size: 2ch;
+		}
+	}
 `;
 
 export default Personal;

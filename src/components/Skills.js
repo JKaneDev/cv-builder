@@ -87,6 +87,41 @@ const StyledSkills = styled.section`
 	button:hover img {
 		filter: ${({ theme }) => theme.filters.hoverFilterAlt};
 	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		ul {
+			gap: 0.5rem;
+		}
+		input {
+			font-size: 2ch;
+			height: 35px;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		ul {
+			gap: 0.75rem;
+		}
+		input {
+			font-size: 2.25ch;
+			height: 40px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		ul {
+			gap: 1rem;
+		}
+		input {
+			font-size: 2.5ch;
+			height: 40px;
+		}
+	}
 `;
 
 export default Skills;

@@ -191,10 +191,6 @@ const StyledEditor = styled.div`
 	align-items: center;
 	gap: 1.5rem;
 
-	> * {
-		width: 550px;
-	}
-
 	input:hover,
 	textarea:hover {
 		background-color: #2d2d2d;
@@ -203,6 +199,30 @@ const StyledEditor = styled.div`
 	input:active,
 	input:focus {
 		background-color: #2d2d2d;
+	}
+
+	@media (max-width: 767px) {
+		> * {
+			width: 550px;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		> * {
+			width: 600px;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		> * {
+			width: 600px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		> * {
+			width: 650px;
+		}
 	}
 `;
 
