@@ -50,7 +50,7 @@ class Personal extends Component {
 						onChange={(event) => onPersonalChange('email', event)}
 					/>
 					<Input
-						type='number'
+						type='text'
 						value={personal.number}
 						placeholder='E.g. 555-555-5555'
 						onChange={(event) => onPersonalChange('number', event)}

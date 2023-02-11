@@ -3,8 +3,7 @@ import Button from './UIElements/Button';
 import save from '../assets/save.svg';
 import autofill from '../assets/autofill.svg';
 import { FaGithub } from 'react-icons/fa';
-import styled, { css, ThemeContext } from 'styled-components';
-import Theme from '../styles/Theme';
+import styled from 'styled-components';
 
 class Header extends Component {
 	constructor(props) {

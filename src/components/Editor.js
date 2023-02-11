@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { autofill } from './Utils/autofill';
 import Preview from './Preview/Preview';
@@ -8,6 +8,8 @@ import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
 import styled, { css } from 'styled-components';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 class Editor extends Component {
 	constructor(props) {
@@ -33,7 +35,13 @@ class Editor extends Component {
 		};
 	}
 
-	generatePDF = () => {};
+	savePreview = () => {
+		html2canvas(document.getElementById('cv-preview')).then((canvas) => {
+			const pdf = new jsPDF('p', 'mm', 'a4');
+			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+			pdf.save('cv-preview.pdf');
+		});
+	};
 
 	handleAutofill = () => {
 		this.setState(autofill(this.state));
@@ -136,7 +144,7 @@ class Editor extends Component {
 	render() {
 		return (
 			<StyledEditor>
-				<Header onAutofill={this.handleAutofill} onSave={this.generatePDF} />
+				<Header onAutofill={this.handleAutofill} onSave={this.savePreview} />
 				<Personal
 					personal={this.state.personal}
 					onPersonalChange={this.handlePersonalChange}

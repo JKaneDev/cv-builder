@@ -16,7 +16,7 @@ class Preview extends Component {
 	render() {
 		const { personal, education, experience, skills } = this.props;
 		return (
-			<StyledPreview>
+			<StyledPreview id='cv-preview'>
 				<div className='header'>
 					<Header
 						firstName={personal.firstName}
