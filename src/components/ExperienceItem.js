@@ -79,12 +79,18 @@ const StyledExpItem = styled.section`
 		display: flex;
 		align-items: center;
 		letter-spacing: 0.15rem;
-		gap: 0.5rem;
+		gap: 1rem;
+		margin-top: 0.5rem;
 	}
 
 	div:nth-of-type(1) div {
 		display: flex;
 		align-items: center;
+	}
+
+	div:nth-of-type(1) button {
+		position: relative;
+		bottom: 0.5rem;
 	}
 
 	div:nth-of-type(1) button {
@@ -119,6 +125,7 @@ const StyledExpItem = styled.section`
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	textarea {

@@ -12,7 +12,7 @@ class Skills extends Component {
 	}
 
 	render() {
-		const { handleSkillsAdd, onSkillsChange, onSkillsDelete } = this.props;
+		const { onSkillsAdd, onSkillsChange, onSkillsDelete } = this.props;
 
 		return (
 			<StyledSkills>
@@ -31,7 +31,7 @@ class Skills extends Component {
 						/>
 					))}
 				</ul>
-				<Button img={Add} onClick={handleSkillsAdd} />
+				<Button img={Add} onClick={onSkillsAdd} />
 			</StyledSkills>
 		);
 	}

@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { autofill } from './Utils/autofill';
 import Preview from './Preview/Preview';
@@ -7,7 +7,7 @@ import Personal from './Personal';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -109,8 +109,8 @@ class Editor extends Component {
 	};
 
 	handleExperienceDelete = (id) => {
-		const updatedExp = this.state.experience.filter((job) => job.id !== id);
-		this.setState({ experience: updatedExp });
+		const updatedExp = this.state.workExperience.filter((job) => job.id !== id);
+		this.setState({ workExperience: updatedExp });
 	};
 
 	handleSkillsChange = (id, field, event) => {
