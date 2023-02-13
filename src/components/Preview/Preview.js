@@ -70,6 +70,24 @@ const StyledPreview = styled.div`
 		display: flex;
 		flex-direction: column;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		height: 800px;
+		line-height: 1.5rem;
+		grid-template-rows: 140px 35px 1fr;
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		height: 840px;
+		line-height: 1.75rem;
+		grid-template-rows: 145px 40px 1fr;
+	}
+
+	@media (min-width: 1200px) {
+		height: 850px;
+		line-height: 1.75rem;
+		grid-template-rows: 150px 40px 1fr;
+	}
 `;
 
 export default Preview;

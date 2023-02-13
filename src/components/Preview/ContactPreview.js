@@ -66,6 +66,20 @@ const StyledContact = styled.aside`
 		height: 12px;
 		width: 12px;
 	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		li p {
+			font-size: 2ch;
+			padding: 0.25rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		li p {
+			font-size: 2ch;
+			padding: 0.25rem;
+		}
+	}
 `;
 
 export default Contact;

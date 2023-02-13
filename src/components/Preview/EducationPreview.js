@@ -68,6 +68,28 @@ const StyledEducationPreview = styled.aside`
 		font-size: 1.25ch;
 		letter-spacing: 0.05rem;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		div {
+			font-size: 2ch;
+		}
+
+		div p {
+			padding: 0.15rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		div {
+			font-size: 2ch;
+		}
+		div p {
+			padding: 0.3rem;
+		}
+	}
 `;
 
 export default Education;

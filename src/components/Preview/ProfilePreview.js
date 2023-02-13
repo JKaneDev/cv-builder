@@ -13,7 +13,7 @@ class Profile extends Component {
 			<StyledProfilePreview>
 				<p className='title'>PROFILE</p>
 				<span className='partial-underline'>_______________</span>
-				<p>{bio}</p>
+				<p id='bio'>{bio}</p>
 			</StyledProfilePreview>
 		);
 	}
@@ -52,6 +52,27 @@ const StyledProfilePreview = styled.section`
 		text-align: left;
 		line-height: 1rem;
 		margin-top: 0.5rem;
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		#bio {
+			font-size: 1.5ch;
+			line-height: 1.25rem;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		#bio {
+			font-size: 1.6ch;
+			line-height: 1.25rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		#bio {
+			font-size: 1.6ch;
+			line-height: 1.25rem;
+		}
 	}
 `;
 

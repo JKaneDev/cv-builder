@@ -31,7 +31,7 @@ const StyledSkillsPreview = styled.aside`
 	.sectionHeader {
 		letter-spacing: 0.1rem;
 		font-size: 1.6ch;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 	}
 `;
 

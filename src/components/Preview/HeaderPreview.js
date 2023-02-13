@@ -53,6 +53,27 @@ const StyledHeader = styled.div`
 		letter-spacing: 0.3rem;
 		font-size: 1.5ch;
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		p,
+		div {
+			font-size: 2ch;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		p,
+		div {
+			font-size: 2.25ch;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		p,
+		div {
+			font-size: 2.5ch;
+		}
+	}
 `;
 
 export default Header;

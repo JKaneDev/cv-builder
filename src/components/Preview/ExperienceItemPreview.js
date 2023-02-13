@@ -18,7 +18,7 @@ class ExperienceItem extends Component {
 					</p>
 				</div>
 				<div>
-					<p className='desc'>{desc}</p>
+					<p id='desc'>{desc}</p>
 				</div>
 			</StyledExperiencePreview>
 		);
@@ -34,7 +34,6 @@ const StyledExperiencePreview = styled.div`
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		margin-top: 1rem;
 	}
 
 	div:nth-of-type(2) {
@@ -52,11 +51,42 @@ const StyledExperiencePreview = styled.div`
 		letter-spacing: 0.15rem;
 	}
 
-	.desc {
+	#desc {
 		letter-spacing: 0.05rem;
 		text-align: left;
 		font-size: 1.25ch;
 		line-height: 1rem;
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		#desc {
+			font-size: 1.5ch;
+			line-height: 1.25rem;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		div:nth-of-type(1) {
+			display: flex;
+			flex-direction: column;
+			gap: 0rem;
+		}
+		#desc {
+			font-size: 1.6ch;
+			line-height: 1.25rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		div:nth-of-type(1) {
+			display: flex;
+			flex-direction: column;
+			gap: 0rem;
+		}
+		#desc {
+			font-size: 1.6ch;
+			line-height: 1.25rem;
+		}
 	}
 `;
 
